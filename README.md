@@ -12,8 +12,10 @@ Convert Markdown files containing `<ruby>` tags to standard office documents (OD
 
 ## Requirements
 
-- [pandoc](https://pandoc.org/) ≥ 3.0
-- Python 3
+- **Bash** – the converter is a Bash script (`converter.sh`). Requires a POSIX-compatible Bash environment (Linux, macOS, WSL).
+- **[pandoc](https://pandoc.org/)** ≥ 3.0 – the document conversion engine. The Lua filter feature is used to transform `<ruby>` tags into native office format markup. Install via your package manager (`apt install pandoc`, `brew install pandoc`, `pacman -S pandoc`, or download from [pandoc.org](https://pandoc.org/)).
+- **Python 3** – used by the post-processing script to inject ruby style definitions into the generated ODT file. Python's standard library (`zipfile`, `os`, `re`) is sufficient; no extra packages required.
+- Ensure both `pandoc` and `python3` are available in your `PATH`.
 
 ## Quick Start
 
@@ -64,8 +66,10 @@ MIT
 
 ## 环境要求
 
-- [pandoc](https://pandoc.org/) ≥ 3.0
-- Python 3
+- **Bash** – 转换器是一个 Bash 脚本（`converter.sh`），需要 POSIX 兼容的 Bash 环境（Linux、macOS、WSL）。
+- **[pandoc](https://pandoc.org/)** ≥ 3.0 – 文档转换引擎。利用 Lua filter 功能将 `<ruby>` 标签转换为办公文档的原生注音标记。通过包管理器安装（`apt install pandoc`、`brew install pandoc`、`pacman -S pandoc`，或从 [pandoc.org](https://pandoc.org/) 下载）。
+- **Python 3** – 后处理脚本使用 Python 向生成的 ODT 文件注入注音样式定义。仅使用标准库（`zipfile`、`os`、`re`），无需额外安装包。
+- 确保 `pandoc` 和 `python3` 在 `PATH` 环境变量中可用。
 
 ## 快速开始
 
