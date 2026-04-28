@@ -43,11 +43,11 @@ local function process_ruby(el)
         end
         local function xml_ruby(base_t, ruby_t)
           local b = esc(base_t); local r = esc(ruby_t)
-          return '<w:r><w:ruby><w:rubyPr><w:rubyAlign w:val="center"/>'
-            .. '<w:hps w:val="12"/><w:hpsRaise w:val="21"/><w:hpsBaseText w:val="21"/><w:lid w:val="zh-CN"/>'
+          return '<w:r><w:ruby><w:rubyPr><w:rubyAlign w:val="distributeSpace"/>'
+            .. '<w:hps w:val="12"/><w:hpsRaise w:val="22"/><w:hpsBaseText w:val="24"/><w:lid w:val="zh-CN"/>'
             .. '</w:rubyPr>'
-            .. '<w:rubyBase><w:r><w:rPr></w:rPr><w:t>' .. b .. '</w:t></w:r></w:rubyBase>'
-            .. '<w:rt><w:r><w:rPr><w:sz w:val="12"/><w:szCs w:val="12"/></w:rPr><w:t>' .. r .. '</w:t></w:r></w:rt>'
+            .. '<w:rt><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:sz w:val="12"/></w:rPr><w:t>' .. r .. '</w:t></w:r></w:rt>'
+            .. '<w:rubyBase><w:r><w:rPr><w:rFonts w:hint="eastAsia"/></w:rPr><w:t>' .. b .. '</w:t></w:r></w:rubyBase>'
             .. '</w:ruby></w:r>'
         end
         local char_count = utf8.len(base_raw)
